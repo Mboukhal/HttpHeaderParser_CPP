@@ -15,7 +15,7 @@ std::map<std::string, std::string> httpheaderParser ( char* httpBuffer, int requ
             while ( !(httpBuffer[i] == '\r' && httpBuffer[i + 1] == '\n') ) {
                 val += httpBuffer[i++];
             }
-            i++;
+            i += 2;
             (*headerMap)["Method"] = val;
             val.clear();
         }
